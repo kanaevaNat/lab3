@@ -1,0 +1,57 @@
+version: "3.1"
+
+intents:
+  - greetings
+  - affirmation
+  - deny
+  - choose_subject
+  - choose_level
+
+
+entities:
+  - subject
+  - level
+
+slots:
+  subject:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: subject
+  level:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: level
+
+responses:
+  utter_default:
+    - text: "Повторите Ваш вопрос"
+
+  utter_greetings:
+    - text: "Вас приветствует школа подготовки к ЕГЭ! Вы готовы записаться на консультацию?"
+
+  utter_great:
+    - text: "Отлично!"
+
+  utter_sad:
+    - text: "Понял, позову для вас человека."
+
+  utter_ask_name:
+    - text: "Как вас зовут?"
+
+  utter_goodbye:
+    - text: "До свидания!"
+
+  utter_suggest_subject:
+    - text: "Выберите предмет к которому хотите готовиться - информатика, физика, химия, биология, география, обществознание, история, математика, русский, литература"
+  utter_suggest_level:
+    - text: "Какой у Вас уровень подготовки? - низкий, средний, высокий"
+  utter_subject_level_answer:
+    - text: "Вы записались на консультацию по предмету: {subject}. Ваш уровень подготовки: {level}. В ближайшее время Вам перезвонят!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

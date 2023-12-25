@@ -1,0 +1,44 @@
+version: "3.1"
+
+nlu:
+  - intent: greetings
+    examples: |
+      - Привет 
+      - Здравствуйте 
+      - Добрый день 
+      - Доброе утро 
+      - Добрый вечер
+
+  - intent: affirmation
+    examples: |
+      - Да
+      - Готов
+      - Ок
+      - Согласен 
+      - Подтверждаю 
+      - Хорошо
+
+  - intent: deny
+    examples: |
+      - Позови человека
+      - Отмена
+
+  - intent: choose_subject
+    examples: |
+      - [информатика](subject)
+      - [физика](subject)
+      - [химия](subject)
+      - [биология](subject)
+      - [география](subject)
+      - [обществознание](subject)
+      - [история](subject)
+      - [математика](subject)
+      - [русский](subject)
+      - [литература](subject)
+
+  - intent: choose_level
+    examples: |
+      - [низкий](level)
+      - [средний](level)
+      - [высокий](level)
+

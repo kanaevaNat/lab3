@@ -1,0 +1,31 @@
+version: "3.1"
+
+stories:
+  - story: default path
+    steps:
+      - intent: greetings
+      - action: utter_greetings
+      - intent: affirmation
+      - action: utter_great
+      - action: utter_suggest_subject
+      - intent: choose_subject
+        entities:
+          - subject: large
+      - slot_was_set:
+          - subject: large
+      - action: utter_suggest_level
+      - intent: choose_level
+        entities:
+          - level: large
+      - slot_was_set:
+          - level: large
+      - action: utter_subject_level_answer
+      - action: utter_goodbye
+
+  - story: call_human
+    steps:
+      - intent: greetings
+      - action: utter_greetings
+      - intent: deny
+      - action: utter_sad
+      - action: utter_goodbye
